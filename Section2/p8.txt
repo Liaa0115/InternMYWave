@@ -1,0 +1,29 @@
+Proposed Indexes :
+
+1. Composite Index on 'department' and 'salary':
+	
+	CREATE INDEX idx_department_salary ON employees(department, salary); 
+
+Reasoning : This index helps the database quickly find rows that match both 'department' and 'salary' conditions, speeding up the query.
+
+
+2. Individual Index on 'salary':
+
+	CREATE INDEX idx_salary ON employees(salary);
+
+Reasoning :  If the query often filters on 'salary' alone, this index will make those searches faster.
+
+
+How the Indexes Help :
+
+- Composite Index (department, salary): Filters the rows by department first, then by salary, reducing the amount of data the database needs to search through.
+- Individual Index on salary: Speeds up queries that filter by salary only.
+
+
+Trade-offs and Drawbacks :
+
+- More Storage: Indexes take up extra space on the disk.
+
+- Slower Write Operations: Adding, updating, or deleting records will be slightly slower because the indexes need to be updated too.
+
+- Complexity: Having too many indexes can make the database slower in some cases, especially if it picks the wrong one for a query.
