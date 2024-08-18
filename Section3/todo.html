@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="todoStyle.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Task Manager</h1>
+        <form id="taskForm" class="mb-4">
+            <div class="form-group">
+                <input type="text" id="taskTitle" class="form-control" placeholder="Task Title" required>
+            </div>
+            <div class="form-group">
+                <textarea id="taskDescription" class="form-control" placeholder="Task Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <select id="taskPriority" class="form-control">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <center>
+                <button type="submit" id="submitButton" class="btn btn-primary">Add Task</button>
+                <button type="button" id="cancelButton" class="btn btn-secondary" style="display: none;">Cancel</button>
+            </center>
+        </form>
+        <div id="taskList"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
